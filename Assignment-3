@@ -1,6 +1,5 @@
 Map<String, dynamic> listOperations(List<int> numbers) {
   int sumEven = 0, largestOdd = 0;
-  //List<int> reversedList = numbers.reversed;
   numbers.forEach((element) {
     if (element % 2 == 0)
       sumEven += element;
