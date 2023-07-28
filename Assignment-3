@@ -1,0 +1,24 @@
+Map<String, dynamic> listOperations(List<int> numbers) {
+  int sumEven = 0, largestOdd = 0;
+  //List<int> reversedList = numbers.reversed;
+  numbers.forEach((element) {
+    if (element % 2 == 0)
+      sumEven += element;
+    else {
+      if (element > largestOdd) largestOdd = element;
+    }
+  });
+  return {
+    'sumEven': sumEven,
+    'largestOdd': largestOdd,
+    'reversedList': numbers.reversed,
+  };
+}
+
+void main() {
+  List<int> numbers = [1, 5, 8, 12, 7, 6, 10, 3];
+  Map<String, dynamic> results = listOperations(numbers);
+  print('Sum of even numbers: ${results["sumEven"]}');
+  print('Largest odd number: ${results["largestOdd"]}');
+  print('Reversed list: ${results["reversedList"]}');
+}
